@@ -4,8 +4,7 @@ import Home from './Components/Home.jsx';
 import PollRoom from './Components/PollRoom.jsx';
 import { ToastContainer } from 'react-toastify';
 
-const socketUrl = 'ws://localhost:5000'; // Replace with your backend WebSocket URL if hosted
-
+const socketUrl = 'https://polling-app-dmw5.onrender.com'; 
 
 export const SocketContext = React.createContext();
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import styles from '../Styles/PollRoom.module.css';
 import Timer from './Timer';
-import { socket } from '../Utils/socket';
+import socket from '../Utils/socket';
 
 const PollRoom = () => {
   const { roomCode } = useParams();
