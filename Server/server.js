@@ -1,14 +1,19 @@
 const express = require('express');
 const http = require('http');
-const cors = require('cors');
 const { WebSocketServer } = require('ws');
 
 const app = express();
 const server = http.createServer(app);
 const wss = new WebSocketServer({ server });
 
-app.use(cors());
-app.use(express.json());
+const cors = require("cors");
+
+app.use(cors({
+  origin: "https://polling-m4v42cggl-bani-singhs-projects.vercel.app", // ✅ Change to your deployed frontend URL
+  methods: ["GET", "POST"],
+  credentials: true,
+}));
+
 
 const rooms = new Map();
 
