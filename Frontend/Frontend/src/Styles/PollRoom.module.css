@@ -1,0 +1,107 @@
+/* PollRoom.module.css */
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 10px #00f2ff, 0 0 20px #00f2ff, 0 0 30px #00f2ff;
+  }
+  50% {
+    box-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff;
+  }
+  100% {
+    box-shadow: 0 0 10px #00f2ff, 0 0 20px #00f2ff, 0 0 30px #00f2ff;
+  }
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  font-family: 'Orbitron', sans-serif;
+  color: #fff;
+  padding: 20px;
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.question {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #00f2ff;
+  text-shadow: 0 0 10px #00f2ff, 0 0 20px #ff00ff;
+}
+
+.options {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.options button {
+  padding: 20px 30px;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: pulseGlow 2s infinite;
+  border: 2px solid transparent;
+}
+
+.options button:hover {
+  transform: scale(1.1);
+  border: 2px solid #ff00ff;
+  box-shadow: 0 0 20px #ff00ff;
+}
+
+.options button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  animation: none;
+}
+
+.messages {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #ff00ff;
+  text-shadow: 0 0 10px #ff00ff;
+}
+
+/* Optional: Styling Timer if it's inside PollRoom */
+.timer {
+  margin-top: 30px;
+  font-size: 1.5rem;
+  color: #ffffff;
+  animation: pulseGlow 3s infinite;
+}
+
+@media (max-width: 600px) {
+  .question {
+    font-size: 1.8rem;
+  }
+
+  .options {
+    gap: 20px;
+  }
+
+  .options button {
+    padding: 16px 24px;
+    font-size: 1rem;
+  }
+
+  .messages {
+    font-size: 1rem;
+  }
+}

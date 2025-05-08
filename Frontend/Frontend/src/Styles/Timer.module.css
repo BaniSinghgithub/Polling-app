@@ -1,0 +1,45 @@
+/* Timer.module.css */
+
+@keyframes pulseGlow {
+  0% {
+    text-shadow: 0 0 10px #00f2ff, 0 0 20px #00f2ff;
+  }
+  50% {
+    text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+  }
+  100% {
+    text-shadow: 0 0 10px #00f2ff, 0 0 20px #00f2ff;
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(-1deg);
+  }
+  50% {
+    transform: rotate(1deg);
+  }
+}
+
+.timer {
+  font-size: 1.6rem;
+  margin-top: 25px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px #00f2ff;
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  animation: pulseGlow 2s infinite;
+}
+
+.countdown {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ff00ff;
+  margin-left: 8px;
+  animation: wiggle 0.5s infinite;
+}
